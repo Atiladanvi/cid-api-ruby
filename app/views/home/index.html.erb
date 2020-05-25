@@ -1,0 +1,148 @@
+<div class="page-wrapper">
+  <!-- ******Header****** -->
+  <header class="header text-center">
+    <div class="container">
+      <div class="branding">
+        <h1 class="logo">
+          <span aria-hidden="true" class="icon_documents_alt icon"><i class="fas fa-list-alt"></i></span>
+          <span class="text-highlight">CID</span><span class="text-bold">API</span>
+        </h1>
+      </div><!--//branding-->
+      <div class="tagline">
+        <p>API - Classificação Internacional de Doenças</p>
+      </div><!--//tagline-->
+    </div><!--//container-->
+  </header><!--//header-->
+
+  <section class="cards-section text-center pb-1">
+    <div class="container">
+      <h2 class="title">API CID-10</h2>
+      <div class="intro">
+        <p>
+          A Classificação Internacional de Doenças e Problemas Relacionados à Saúde (também conhecida como Classificação Internacional de Doenças – CID 10) é publicada pela Organização Mundial de Saúde (OMS) e visa padronizar a codificação de doenças e outros problemas relacionados à saúde. A CID 10 fornece códigos relativos à classificação de doenças e de uma grande variedade de sinais, sintomas, aspectos anormais, queixas, circunstâncias sociais e causas externas para ferimentos ou doenças. A cada estado de saúde é atribuída uma categoria única à qual corresponde um código CID 10
+        </p>
+      </div><!--//intro-->
+
+      <div class="callout-block callout-success">
+        <div class="icon-holder">
+          <i class="fas fa-ambulance"></i>
+        </div><!--//icon-holder-->
+        <div class="content">
+
+          <p>Cada doença pode ser dada a uma categoria e receber um código de até seis caracteres de longitude (em formato de X00.000). Cada uma das tais categorias pode incluir um grupo de doenças similares.</p>
+
+        </div><!--//content-->
+      </div>
+    </div><!--//section-block-->
+  </section><!--//cards-section-->
+  <section class="cards-section text-center pt-1">
+    <div class="section-block">
+      <p>Obtém a lista de todas as doenças:</p>
+      <div class="callout-success">
+        <h6>
+          <span class="badge-info p-1">
+            <i class="fa fa-globe"></i> GET
+          </span>
+          <code>{{env('APP_URL')}}/cid10</code>
+        </h6>
+        <pre style="background: #212121">
+
+    <code class="language-js">[
+  {
+    "codigo":"A00",
+    "nome":"Cólera"
+  },
+  {
+    "codigo":"A00.0",
+    "nome":"Cólera Devida a Vibrio Cholerae 01, Biótipo Cholerae"
+  },
+  {
+    "codigo":"A00.1","nome":"Cólera Devida a Vibrio Cholerae 01, Biótipo El Tor"
+  },
+  {
+    "codigo":"A00.9",
+    "nome":"Cólera Não Especificada"
+  },
+          ...
+  {
+    "codigo":"A02",
+    "nome":"Outras Infecções Por Salmonella"
+  }
+]                  </code>
+                    </pre>
+      </div><!--//code-block-->
+    </div><!--//section-block-->
+    <div class="section-block">
+      <p>Obtém doença por código:</p>
+      <div class="callout-success">
+        <h6>
+          <span class="badge-info p-1">
+            <i class="fa fa-globe"></i> GET
+          </span>
+          <code>{{env('APP_URL')}}/cid10/{codigo-cid}</code>
+        </h6>
+        <pre style="background: #212121">
+
+    <code class="language-js">{
+   "codigo":"A00",
+   "nome":"Cólera"
+}                    </code>
+                    </pre>
+      </div><!--//code-block-->
+    </div><!--//section-block-->
+  </section>
+  <div class="content-inner">
+    <section id="license" class="doc-section text-center">
+      <div class="section-block">
+        <div class="jumbotron text-center">
+          <h1 class="doc-title">Estatísticas</h1>
+          <h3 class="mb-4">
+            <span class="badge-info p-1">
+              Acessos
+            </span>
+            <code>End Point</code>
+          </h3>
+          <h6>
+            <span class="badge-info p-1">
+              {{ $visits['home'] }}
+            </span>
+            <code>{{env('APP_URL')}}/</code>
+          </h6>
+          <h6>
+            <span class="badge-info p-1">
+              {{ $visits['total_cids'] }}
+            </span>
+            <code>{{env('APP_URL')}}/cid10/</code>
+          </h6>
+          <h6>
+            <span class="badge-info p-1">
+              {{ $visits['cids'] }}
+            </span>
+            <code>{{env('APP_URL')}}/cid10/{codigo-cid}</code>
+          </h6>
+          <h1 class="mt-3">
+            <span class="badge-info p-2 mr-2">
+              {{ $visits['total'] }}
+            </span>
+            Total
+          </h1>
+          <small>Contando desde: 18/10/2019</small>
+        </div><!--//jumbotron-->
+      </div><!--//section-block-->
+    </section><!--//doc-section-->
+  </div>
+  <div class="content-inner">
+    <section id="license" class="doc-section text-center">
+      <div class="section-block">
+        <div class="jumbotron text-center">
+          <h1 class="doc-title">
+            <a class="dotted-line" href="https://github.com/Atiladanvi/cid-api/blob/master/LICENSE" target="_blank">Licença MIT</a>
+          </h1>
+          <div class="list list-inline text-center">
+            <a class="github-button" href="https://github.com/Atiladanvi/cid-api" data-size="large" data-show-count="true" aria-label="Star Atiladanvi/cid-api on GitHub">Star</a>
+          </div>
+        </div><!--//jumbotron-->
+      </div><!--//section-block-->
+    </section><!--//doc-section-->
+  </div>
+</div><!--//page-wrapper-->
