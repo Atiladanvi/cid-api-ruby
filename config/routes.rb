@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'cid10' => "cid10#index"
+  get 'cid10/:codigo' => "cid10#show"
+
   namespace :web do
     get 'home/index'
   end
