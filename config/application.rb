@@ -24,6 +24,11 @@ module Cid10ApiRuby
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # Config timezone
+    config.time_zone = 'America/Sao_Paulo'
+    config.active_record.default_timezone = 'America/Sao_Paulo'
+    Time::DATE_FORMATS[:db] = '%Y-%m-%d %H:%M:%S'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

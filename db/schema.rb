@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_023459) do
+ActiveRecord::Schema.define(version: 2020_05_29_114009) do
 
   create_table "cid10", force: :cascade do |t|
     t.string "codigo"
     t.text "nome"
+  end
+
+  create_table "visitors", force: :cascade do |t|
+    t.string "ip"
+    t.string "end_point"
+    t.datetime "created_at", precision: 0, null: false
   end
 
 end

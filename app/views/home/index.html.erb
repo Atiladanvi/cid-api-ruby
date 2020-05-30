@@ -111,25 +111,25 @@
       </h3>
       <h6 class="mb-3">
         <span class="badge-info p-1">
-          {{ $visits['home'] }}
+          <%= @total_visitors['/'] %>
         </span>
-        <code>{{env('APP_URL')}}/</code>
+        <code><%= request.base_url %>/</code>
       </h6>
       <h6 class="mb-3">
         <span class="badge-info p-1">
-          {{ $visits['total_cids'] }}
+         <%= @total_visitors['/cid10'] %>
         </span>
-        <code>{{env('APP_URL')}}/cid10/</code>
+        <code><%= request.base_url %>/cid10/</code>
       </h6>
       <h6 class="mb-3">
         <span class="badge-info p-1">
-          {{ $visits['cids'] }}
+          <%= @total - (@total_visitors['/'] + @total_visitors['/cid10']) %>
         </span>
-        <code>{{env('APP_URL')}}/cid10/{codigo-cid}</code>
+        <code><%= request.base_url %>/cid10/{codigo-cid}</code>
       </h6>
       <h1 class="mt-3">
         <span class="badge-info p-2 mr-2">
-          {{ $visits['total'] }}
+           <%= @total %>
         </span>
         Total
       </h1>
